@@ -1,0 +1,244 @@
+What is React?
+React is a JavaScript library developed by Meta, it is used to build the ui, especially single page applications .
+It allows us to build ui for reusable components,and efficiently update the page when data changes.
+
+Why do we use React?
+We use React because it allows us to create reusable components 
+and efficiently update the UI when application data changes .
+It is especially useful for building interactive single page applications
+
+What is component ?
+component is a reusuable piece of ui in React,it contains ui and logic required for part of the application,
+A component can use propes, state, usestate,useeffect when required.
+
+ex :
+function User() {
+    const [name, setName] = useState("");
+
+    return (
+        <div>
+            <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            <h2>{name}</h2>
+        </div>
+    );
+}
+
+the flow is 
+User types "Renuka"
+        ↓
+onChange event occurs
+        ↓
+e.target.value
+        ↓
+"Renuka"
+        ↓
+setName("Renuka")
+        ↓
+name state becomes "Renuka"
+        ↓
+React re-renders
+
+
+what is difference b/w functional and class based functions?
+
+functional components are javascript functions return jsx
+We can use React Hooks inside functional components
+function User() {
+
+    const [name, setName] = useState("");
+
+    useEffect(() => {
+        console.log("Component loaded");
+    }, []);
+
+    return (
+        <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+        />
+    );
+}
+
+class Component:
+A class componenet is a javascript class that react componnent
+class classname extends react.component
+
+from React import react
+class user extends React.component{
+render(){
+        return (
+		        <h1> Hello <h1>
+				)
+		}	
+    }
+export default user;
+The render() method returns the JSX that should be displayed.
+
+
+     function based         class Based
+JavaScript function	      JavaScript class
+Returns JSX directly	  Uses render() to return JSX
+Uses Hooks	              Uses lifecycle methods
+No this required	      Uses this frequently
+	
+what is this keyword?
+this refers the instance of component
+
+What is a JavaScript class?
+class Person{
+    constructor(name)
+	{
+	 this.name = name
+	}
+    say hello () =>
+     {
+        console.log(this.name)
+     }
+}
+
+const person1 = new Person("Renuka")
+person1.say hello()
+
+constructor(name) {
+    this.name = name;
+}
+
+The constructor is a special method.
+
+It runs automatically when you create an object using new.	 
+Lifecycle methods are methods provided by React mainly for class components. 
+They allow us to run code at different stages of a component's life
+
+                    Component created
+						  ↓
+					Component displayed
+						  ↓
+					Component updated
+						  ↓
+					Component removed
+					
+					
+1. Mounting — component is created	
+Mounting means the component is created and added to the UI/DOM.
+The important lifecycle methods are:
+constructor()					
+class User extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: "Renuka"
+        };
+    }
+}
+
+2. componentDidMount()
+Runs after the component is added to the DOM
+usually for Api calls
+
+componentDidMount() {
+    fetch("/api/users")
+        .then(response => response.json())
+        .then(data => {
+            this.setState({ users: data });
+        });
+}
+
+2. Updating — component changes
+
+A component updates when its state or props change.
+
+componentDidUpdate()
+
+It runs after the component has been updated.
+
+componentDidUpdate(prevProps, prevState) {
+
+    if (prevState.name !== this.state.name) {
+        console.log("Name changed");
+    }
+}
+
+3> Unmounting — component is removed
+componentWillUnmount()
+
+Runs just before the component is removed from the DOM.
+
+It is commonly used for cleanup.
+
+For example, if you started a timer:
+componentDidMount() {
+    this.timer = setInterval(() => {
+        console.log("Running");
+    }, 1000);
+}
+You should clean it up:
+
+componentWillUnmount() {
+    clearInterval(this.timer);
+}
+
+| Phase      | Method                   | Purpose                          |
+| ---------- | ------------------------ | -------------------------------- |
+| Mounting   | `constructor()`          | Initialize state                 |
+| Mounting   | `componentDidMount()`    | After component loads; API calls |
+| Updating   | `componentDidUpdate()`   | After state/props update         |
+| Unmounting | `componentWillUnmount()` | Cleanup                          |
+
+
+Lifecycle methods are methods available mainly in React
+class components that allow us to execute code during different stages of a component's lifecycle.
+The main stages are mounting, updating, and unmounting.
+For example, componentDidMount is used after the component is mounted,
+componentDidUpdate runs after updates, and componentWillUnmount is used for cleanup before the component is removed
+
+what is onchange , usechange, and e?
+usestate is used to state management, when enter the input , the onchange detect the input change,
+the event object contain the information about the onchage information.
+
+const [name,setName] = usestate("");
+name = current name
+setName = function to update the value
+usestate("") = inital value
+
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+function App() {
+    const [name, setName] = useState("");
+
+    useEffect(() => {
+        axios.get("/api/name")
+            .then(response => {
+                setName(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []);
+
+    return (
+        <h1>{name}</h1>
+    );
+}
+
+export default App;
+
+Yes, I can integrate APIs in React using either fetch or Axios.
+In my project, I can use Axios to send HTTP requests to the Django REST API. 
+I usually call the API inside useEffect, store the response in state using useState,
+and React re-renders the UI with the updated data
+
+What is JSX?
+JSX statnds for javascript xml
+It allows us to write HTML-like syntax inside JavaScript.
+
+it looks like html,but it is actually javascript syntax that React transforms into javascript 
+
+return (
+<div className = "home-container" ><h1 className = "Home Title"> vms </h1> </div>
+
+
