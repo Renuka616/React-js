@@ -1,0 +1,124 @@
+what is useState?
+useEffect is a ReactHook , used to store and manage the data
+inside functional component
+
+when state changes, React rerender the component with updated value
+
+example
+const[company,setCompany] = useState("")
+This is useState
+
+it contain
+company = current state
+setCompany = function to update the state value
+useState("") = initial value
+
+for example 
+company name = ""
+
+when user enter the ABC Technolohies
+onchange = it will detect the component event
+
+onChange={(e)=>setCompanyName(e.target.value)}
+companyName = "ABC Technologies"
+
+React rerender with the update value in component 
+
+User types: ABC Company
+
+→ e.target.value becomes "ABC Company"
+
+→ setCompanyName("ABC Company")
+
+→ companyName state gets updated
+
+→ React re-renders the component.
+
+How does useState work with your input?
+<Form.Control
+    type="text"
+    value={companyName}
+    onChange={(e) => setCompanyName(e.target.value)}
+    required
+/>
+
+I use useState to maintain the input value, the value property is connected with state,onchange captures the event change in 
+component by using e.target.value, then i update the state using
+setter function.
+
+what is controlled components?
+The controlled components are form elements whose input values are managed by React state.
+For Example if i useState to store the input values such as username, and bind the state with input values, whenever user enters input
+onChange detect the event and update the value with setter function
+
+const[name,setName] = useState("")
+return(
+    <input type = "text"
+    value = {name}
+    onchange={(e)=>setName(e.target.value)}
+    />
+)
+
+User types → onChange → setName() → React state updates → input updates
+
+why do we use useState?
+useState is used when  component need to remember the data that can change.
+
+Mainly we used for
+1> Input value
+2> api response value
+3>selected dropdown values
+
+How do you handle form inputs using useState?
+I will use form inputs by using controlled components.
+state will bind with input when user enter inputs the onchange will detect with help of event object and update the state value using setter function and react rerenders the ui
+
+What happens when state changes?
+when state changes the react will schedule a rerender a component
+During rerender the component the react uses updated state value and 
+update necessary part of ui 
+
+Can we have multiple useStates?
+We can have multiple state variables in one component
+const [name, setName] = useState("");
+const [age, setAge] = useState(0);
+const [loading, setLoading] = useState(false);
+
+For example, I can have separate states for form data, loading status, selected values, and error messages. Each state has its own setter function.
+
+useEffect
+=========
+useEffect is a Reacthook, it is used to perform the side effects in a functional component
+
+one common usecase is Api integration, when component loads i will call the backend api using the axios/fetch
+The request goes to the API URL, then the Django REST Framework URL routes the request to the appropriate view. The view processes the request, interacts with the database if required, and sends the response back to React. I can then store the response in state using useState
+
+for example
+
+the main usecased in my project is calling the api
+common side effects include:
+fetch the data from backend,
+api calling
+set timers
+
+What is a dependency array?
+The dependency array is the second argument of useEffect. It tells React when the effect should run again.
+without dependency array:
+useEffect(()=>
+{
+
+},[]);
+
+it wont rerun after initial render, when the state changes
+
+with dependency array
+userEffect(()=>
+{
+    //code
+},[user]);
+
+The useeffect rerun after user information is available,or userstate changes.
+
+
+
+

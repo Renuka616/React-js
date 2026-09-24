@@ -1,0 +1,67 @@
+what is difference b/w html and javascript?
+Html                                       javascript
+class                                     className
+For                                        html for
+()                                         {}
+JavaScript cannot directly           JavaScript expressions use {}
+be written inside HTML 
+Events use html syntax               events use camelcase
+
+in html : <h1 class="container"> hello </h1>
+in jsx : <h1 className="container"> hii </h1>
+
+why className in jsx?
+in html we will class but in Jsx we need to use className because it follows the 
+javascript naming conventions,class is a reserved keyword in javascript
+
+What is () in JSX?
+commonly we can see 
+return (
+    <div>
+        <h1> hii </h1>
+        </h2> hellop </h2>
+    </div>    
+)
+
+() is used to group the jsx elements.
+
+{} allow you to put a JavaScript expression inside JSX.
+ex : const name = "Renuka"
+     return <h1>Hello {name} <h2>
+
+ {} stored javascript variable and displayed 
+
+ What is class in HTML?
+ suppose u have a several buttons 
+<button class="primary-button">Save</button>
+<button class="primary-button">Update</button>
+<button class="cancel-button">Cancel</button>
+
+if we want to apply css style or javascript functionality to same group of buttons
+we can use class
+class is used to group elements
+.primary-button {
+    background-color: blue;
+    color: white;
+}
+
+both save and update will have same styling
+class → can be used by many elements
+id → normally identifies one specific element
+
+What is for in HTML?
+for is commonly used with lable
+<label for="username">Username</label>
+
+in jsx we use htmlFor instead of for because for is a reserved keyword in javascript
+<label htmlFor="username">UserName</label>
+
+What does camelCase mean?
+<button onclick="save()">Save</button>
+in jsx:
+<button onClick="{save}">Save</button>
+
+
+
+
+
