@@ -15,8 +15,8 @@ index.html	The HTML template containing the root element where React mounts the 
 package.json	Contains project metadata, scripts, and dependency information.
 vite.config.js	Contains Vite configuration, such as plugins, development server settings, and build options.
 
-
-
+MMM
+bb
 what is difference b/w html and javascript?
 Html                                       javascript
 class                                     className
