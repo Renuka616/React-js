@@ -8,6 +8,7 @@ be written inside HTML
 Events use html syntax               events use camelcase
 
 
+React  
 
 in html : <h1 class="container"> hello </h1>
 in jsx : <h1 className="container"> hii </h1>
