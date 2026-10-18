@@ -27,8 +27,6 @@ be written inside HTML
 Events use html syntax               events use camelcase
 
 
-React  
-Renuka Renuka Renuka Renuka
 in html : <h1 class="container"> hello </h1>
 in jsx : <h1 className="container"> hii </h1>
 
@@ -69,7 +67,7 @@ class is used to group elements
 
 both save and update will have same styling
 class → can be used by many elements
-id → normally identifies one specific element
+id → normally identifies one specific element 
 
 What is for in HTML?
 for is commonly used with lable
