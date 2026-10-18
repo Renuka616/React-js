@@ -9,7 +9,7 @@ Events use html syntax               events use camelcase
 
 
 React  
-
+Renuka Renuka Renuka Renuka
 in html : <h1 class="container"> hello </h1>
 in jsx : <h1 className="container"> hii </h1>
 
