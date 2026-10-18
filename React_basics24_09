@@ -1,3 +1,22 @@
+D:\ReactFundmentals
+
+File / Folder	Purpose
+dist/	Contains production-ready HTML, CSS, JavaScript, and assets generated when we run npm run build.
+node_modules/	Contains installed dependencies and packages required by the project.
+public/	Stores static files such as favicons, public images, and documents that don't need to be imported into JavaScript.
+src/	Contains the main application source code, components, pages, and local images.
+src/assets/	Stores assets such as local logos, images, and SVG files imported into components.
+src/pages/	Typically contains page-level components, such as Login, Dashboard, and Home.
+App.jsx	The root application component that organizes the UI and other components.
+main.jsx	The entry point that mounts the React application into the DOM.
+App.css	CSS styles specifically associated with the app or its components, depending on how you organize your project.
+index.css	Typically contains global styles applied across the application.
+index.html	The HTML template containing the root element where React mounts the application.
+package.json	Contains project metadata, scripts, and dependency information.
+vite.config.js	Contains Vite configuration, such as plugins, development server settings, and build options.
+
+
+
 what is difference b/w html and javascript?
 Html                                       javascript
 class                                     className
