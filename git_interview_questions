@@ -1,0 +1,83 @@
+what is git and github?
+git is a distributed version control system used to track changes in the source code, maintain version history,and develop new features independently using branches.github is a platform used to host the repositories and colaborate with other developers.
+
+diff b/w normal directory and git repo?
+Normal directory
+it contains folders and files
+doesn't track the file changes 
+doesn't maintain the commit history
+
+Git Repo
+stores your project files and folders
+Contains a hidden .git directory.
+Tracks changes when you stage and commit them
+maintain the commit history
+
+diff b/w stage / local and remote?
+local = working directory
+This is where u create and edit your project files 
+
+staging :
+This is where you select the changes you want to include in your next commit.
+git add . 
+git add <filename>
+ 
+Remote Repository:
+this is repository, host on remote server such as git hub, where you share your committed code.
+Command: git push 
+
+How code moves through Git
+Working directory
+Edit files
+
+Staging area
+git add .
+
+Local repository
+git commit -m "Update UI"
+
+Remote repository (GitHub)
+git push
+
+
+git status: git status is used to find the status of file in the git repository. it will show the untracted, modified and staged files.
+
+Modified file : u changed an already tracked file, but latest changes are not staged 
+untracked files : u created a new files that git not track yet
+staged files: those files are added into staging area,these are ready to commit 
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   git_interview_questions
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_interview_questions
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        axios_api_calls
+        conditional_rendering
+        event_handling
+        forms
+        local_and_session
+        props_state
+        react_route
+        useContext
+        virtual_dom
+
+
+git add . and git add <filename>:
+stages changes from working directory,so they can include in next commit
+
+git commit : save the staged changes as a commit in git local repo
+git push → Uploads local commits to the remote repository, such as GitHub.
+
+Remember: add → Stage, commit → Save locally, push → Upload remotely.
+
+
