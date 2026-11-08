@@ -1,0 +1,136 @@
+Tell me about yourseld
+POST /api/payments
+
+Idempotency-Key: ABC123
+ 
+{
+
+    "invoice_id": 1001,
+
+    "amount": 50000
+
+
+Tell me about yourself
+POST /api/payments
+
+Idempotency-Key: ABC123
+ 
+{
+
+    "invoice_id": 1001,
+
+    "amount": 50000
+
+}
+ 
+The client may send the same request 3 times because of a network timeout.
+ 
+ 
+Requirements:
+Payment must happen only once
+Same idempotency key should return the original result
+Different keys should create separate transactions
+Handle concurrent requests
+ 
+ 
+ implement the logic or provide pseudocode.
+ 
+how do u protected the apis
+RBAC Architecture
+how many members are there inteam how much time take to complete the project
+How many apis u created
+CI/CD 
+Jenkins =  which programming u used to create pipeline
+S3 purpose
+which ec2 type u used to create
+invoices = Invoice.objects.all()
+
+ 
+
+for invoice in invoices:
+    print(invoice.vendor.name)
+    print(invoice.approval_set.all())
+how did u check the performance is improved
+how do u check the db query is upgrading
+how do u pass the arguments in docker container
+ 
+you have created a branch called Renuka which has 40 commit of changes
+and now you need to get only 2 commits from those 40 commits 
+
+
+
+
+# 1> Interview
+pandas missing values 
+merged vs concat
+decorators
+kwargs
+
+2> 
+pandad group by
+
+5>
+Rest api 
+put patch 
+Index on which can u create index
+how do u increase performance
+joins inner join
+docker can we run multiple container
+what is the use of docker
+what is docker Image
+
+
+
+3>
+Redis, celery,
+have u deploy the project
+cicd
+how many members in your team
+
+4>
+jwt, ratelimit,race condition, transaction.atomic
+have u work with millions of data
+
+4> 
+api is slow
+suppose user not able to connect api it is showing server issue 
+for example  their given some requirement u need to complete within 3 hrs, but it is not sufficient time to comme , how do u ask client
+
+5>
+multi threading, multiprocessing
+closures
+memory leakage
+memaory management
+list comprehension
+how do u optimize wuery performance 
+bottleneck
+RBAC
+async await
+differnce b/w django and flask 
+
+Arcle Lab 2
+
+generators explain and write a program
+explain about project and demonsrate
+How does your WebSocket application work?
+“How would you implement caching?
+api Response should be within 10 seconds
+How would you improve API performance?
+Rate limiting
+Load balancer
+How would you design your API?
+What bottleneck have you faced in your company?
+"aaabbcdde" print not first ocuurence of the non repeating charater
+horizontal and vertical scalling
+How well do you know about CI/CD?
+ 
+Turium 
+RBAC design
+use context
+
+
+
+
+           
+
+      

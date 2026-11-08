@@ -1,0 +1,161 @@
+react-router is a react library that allows you to handle navigation
+b/w different pages/route.
+the router will map the url to the component allows to user 
+navigate b/w different views without refreshing the page
+
+
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/master-page" element={<MasterPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+What is useNavigate?
+useNavigate is a react router hook used for programatic navigation.
+
+User enters email/password
+          ↓
+Click Login
+          ↓
+handleLogin()
+          ↓
+Axios POST request
+          ↓
+Backend validates login
+          ↓
+Response received
+          ↓
+Check status === "SUCCESS"
+          ↓
+loginUser(...)
+          ↓
+navigate("/master-page")
+
+
+why did u use usenavigate?
+i use useNavigate in the login page, when user send request through 
+axios the backend checks the credentials after success login the user 
+navigate to masterpage, since the useNavigate is depends on response 
+
+what is Link To?
+<Link To> signup </Link>
+Link To is used when the user manually click on button or link to 
+navigate to another route
+
+if (actualStatus === "SUCCESS") {
+    loginUser({
+        user,
+        userTypeId,
+        menus: menus.map(...)
+    });
+
+    navigate("/master-page");
+}
+
+useParams is a react router hook used to get the dynamic parameters from the url.
+
+simple example:
+<route path="vendors/:id", element={<Vendors />}
+Here :id is a dynamic parameter.
+
+If the URL is:
+
+/vendor/101
+
+Then id will be 101.
+
+Inside the Vendor component:
+
+import { useParams } from "react-router-dom";
+
+function Vendor() {
+    const { id } = useParams();
+
+    return <h1>Vendor ID: {id}</h1>;
+}
+
+Output:
+
+Vendor ID: 101
+How it works
+
+Think of it like:
+
+URL
+ ↓
+/vendor/101
+ ↓
+Route
+ ↓
+/vendor/:id
+ ↓
+useParams()
+ ↓
+id = 101
+Real-world example
+
+Suppose you have a vendor list:
+
+Vendor A → ID 101
+Vendor B → ID 102
+Vendor C → ID 103
+
+When the user clicks Vendor A, you can navigate to:
+
+/vendor/101
+
+Then the Vendor Details page can use:
+
+const { id } = useParams();
+
+and use that id to call your Django API:
+
+axios.get(`/api/vendors/${id}/`)
+useParams vs useNavigate
+Hook	Purpose
+useNavigate()	Go to another route
+useParams()	Get values from the current URL
+
+For example:
+
+navigate("/vendor/101"); 
+
+for example we have a vendor list use visit vendor list page, if user clicks /vendors/101
+i can use const{id} = useParams() to get the value from /vendors/101/
+i can use this id to fetch the corresponding vendor details 
+
+what is Browser router?
+the browser router enables the router in react application.
+it could handle the navigation.
+
+what is routes?
+The route is a container can hold multiple components
+
+what is route?
+the route defines a mapping b/w url path and component.
+
+For example, /login can be mapped to the Login component.
+BrowserRouter → Routes → Route
+
+

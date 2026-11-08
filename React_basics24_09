@@ -1,15 +1,46 @@
+Module	Topics
+1. Fundamentals	React, components, JSX, functional vs class components
+2. Data handling	Props, state, useState, event handling
+3. Hooks	useEffect, useContext, useRef, useMemo, useCallback
+4. Forms	Controlled components, validation, dropdowns, file uploads
+5. Rendering	Conditional rendering, map(), keys, lists
+6. Routing	React Router, Link, useNavigate, useParams
+7. API integration	Axios, GET, POST, PUT, PATCH, DELETE, error handling
+8. Advanced concepts	Context API, prop drilling, code splitting, lazy loading
+9. Practical project	Build a small Vendor Management application
+10. Interview	Scenario-based and technical interview questions
+
+
+what is React?
+The React is a opensource javascript library used to build interactive
+and dynamic user interfaces.
+It allows us to create reusable ui component.and develop the single paged applications
+In React it contains a stage management, when data changes the it re-renders the necessary components and update ui efficiently.
+
+what are the fetures of React?
+React provides virtual dom, component based architecture,reusable
+ui, jsx support, Hooks
+
+virtual Dom - React creates a light-weight copy of real Dom, 
+              and update only changed part.
+JSX – lets you write HTML inside JavaScript.
+component - UI is broken into independent,re-usuable pieces.
+Hooks – functions like useState and useEffect give functional components
+
+
+
 D:\ReactFundmentals
 
 File / Folder	Purpose
 dist/	Contains production-ready HTML, CSS, JavaScript, and assets generated when we run npm run build.
 node_modules/	Contains installed dependencies and packages required by the project.
-public/	Stores static files such as favicons, public images, and documents that don't need to be imported into JavaScript.
-src/	Contains the main application source code, components, pages, and local images.
+public/	     Stores static files such as favicons, public images, and documents that don't need to be imported into JavaScript.
+src/	    Contains the main application source code, components, pages, and local images.
 src/assets/	Stores assets such as local logos, images, and SVG files imported into components.
 src/pages/	Typically contains page-level components, such as Login, Dashboard, and Home.
-App.jsx	The root application component that organizes the UI and other components.
+App.jsx	    The root application component that organizes the UI and other components.
 main.jsx	The entry point that mounts the React application into the DOM.
-App.css	CSS styles specifically associated with the app or its components, depending on how you organize your project.
+App.css 	CSS styles specifically associated with the app or its components, depending on how you organize your project.
 index.css	Typically contains global styles applied across the application.
 index.html	The HTML template containing the root element where React mounts the application.
 package.json	Contains project metadata, scripts, and dependency information.

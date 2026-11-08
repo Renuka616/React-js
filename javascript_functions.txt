@@ -1,0 +1,79 @@
+Functions
+Essential
+
+Learn:
+- Function declaration
+- Function expression
+- Arrow functions
+- Parameters and return values
+- Callback functions
+
+- Function declaration
+
+function functionname(){
+    statement
+}
+
+// function declaration
+function greet(){
+  console.log("hello");
+}
+greet();
+
+- Function expression = assigning a function to a variable
+const func = function functionname(){
+    // statement
+
+}
+
+const func = function add(a,b){
+    return a+b
+}
+function(10,20)
+
+// function Expression
+const greeet = function greeting(){
+  console.log("good morning");
+}
+greeet();
+
+
+Arrow functions = arrow functions provide shorter way to write functions
+Supported for single-line expressions
+() => { ... }
+const fun = () => {
+    // statement
+}
+const demo = () => {
+  console.log("hoo");
+};
+demo();
+
+const calculateTotal = (price,quantity) =>
+  {
+    return price * quantity;
+    
+  };
+const result = calculateTotal(100,5)
+console.log(result);
+
+callbacks functions - A callback function is a function that is passed as an argument to another function and is executed (called) inside that function.
+
+function welcome(callback) {
+    console.log("Welcome");
+    callback();
+}
+
+function message() {
+    console.log("Good Morning");
+}
+
+welcome(message);
+
+ this is callbck functiom  welcome(message ) the first main function will execute sp welcome wil print after call back function will execute good morning will print
+
+ 
+
+
+
+

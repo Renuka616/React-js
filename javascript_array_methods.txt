@@ -1,0 +1,74 @@
+An arrays is a collection of homogeneous elements
+Creating an array:
+const numbers = [10,20,30,40,50]
+const names = ["Renuka","jhon","david"]
+console.log(numbers.length)
+console.log(numbers[0])
+console.log(numbers[1])
+console.log(numbers[2])
+console.log(numbers[3])
+console.log(numbers[4])
+
+syntax: array_name.method_name()
+
+map():map is used to transform every element in a array and return
+       a new array with same no of elements
+
+const Array1 = [10,20,30,40,50]
+const result = Array1.map((num) => {
+  return num*2
+});
+console.log(result)  
+
+filter(): 
+filter is used to filter elements based on condition.
+It return a new array containing elements that satisfy the condition
+
+const array = [1,2,3,4,5]
+const result = array.filter(num) =>{
+       return num > 3
+
+}
+console.log(result)
+
+reduce():
+reduce() is used to reduce all array elements into a single value
+Calculate the sum of array elements.
+
+reduce() takes two important parameters:
+- sum – accumulator (stores the running total).
+- num – current element in the array.
+
+array.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, initialValue);
+
+const Array3 = [10, 20, 30, 40, 50];
+
+const result2 = Array3.reduce((sum, num) => {
+    return sum + num;
+}, 0);
+
+console.log(result2);
+
+
+some():
+some check the wheather the atleast one element satisfy the condition
+It returns a Boolean value (true or false).
+
+const numbers = [10, 20, 30, 40];
+const result = array.some(num) => {
+       return num > 2;
+}
+console.log(result)
+
+every():
+every method check wheather all the elements in an array will satisfy or not
+it return the result in true or false
+
+const numbers = [10, 20, 30, 40];
+const result = array.every(num) => {
+       return num > 2;
+}
+console.log(result)
+

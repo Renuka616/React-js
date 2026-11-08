@@ -1,0 +1,82 @@
+var
+- Function scoped.
+- Allows redeclaration.
+- Allows reassignment.
+- Can be accessed throughout the function in which it is declared.
+
+function demo(){
+    var a = 10;
+    var a = 10;
+    a = 20;
+}
+demo()
+
+let 
+- block scoped { } - we can acess within the block
+- allows reassignment
+- redeclaration not allowed
+- can acess within the block and cannot access outside
+{
+    let a = 10
+    // let a = 20; // Error: already declared
+    a = 20
+    console.log(a)
+}
+
+const
+- Block scoped.
+- Does not allow redeclaration in the same scope.
+- Does not allow reassignment.
+- Accessible inside the block, not outside
+
+{
+    const a = 10;
+
+    // const a = 20; // Error: redeclaration
+
+    // a = 20; // Error: reassignment
+
+    console.log(a);
+}
+
+practical code
+{
+  const a = 10;
+  let b = 20;
+  
+  b = 30;
+  console.log(a);
+  console.log(b);
+}
+// console.log(a);
+// console.log(b);
+
+function demo(){
+  var a = 10; declaration 
+  var a = 10; redeclaration
+  a = 20; reassignment
+  console.log(a) 
+}
+demo()
+
+
+datatypes 
+
+string,int,undefined ,Null,boolean
+undefined = declare a variable but not assign value
+Null - assign a variable with  will give type as object
+let name = "Renuka"
+let a = 10
+let b 
+let c = null
+let isactive = true
+console.log(typeof(name))
+console.log(typeof(a))
+console.log(typeof(b))
+console.log(typeof(c))
+console.log(typeof(isactive))
+
+
+
+
+

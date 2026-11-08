@@ -1,0 +1,85 @@
+Variables and data types
+Essential
+
+Learn:
+- var, let, const
+- String, Number, Boolean, Undefined, Null
+- typeof
+- Difference between let, const and var
+
+
+Functions
+Essential
+
+Learn:
+- Function declaration
+- Function expression
+- Arrow functions
+- Parameters and return values
+- Callback functions
+
+Arrays
+Essential
+
+Learn:
+- Creating and accessing arrays
+- map()
+- filter()
+- find()
+- forEach()
+- reduce()
+- some() and every()
+
+. Objects
+Essential
+
+Learn:
+- Object creation
+- Accessing properties using dot and bracket notation
+- Adding, updating and deleting properties
+- Nested objects
+- Destructuring
+
+ES6+ features
+Essential
+
+Learn:
+- Template literals
+- Destructuring
+- Spread operator ...
+- Rest parameters
+- Default parameters
+- Optional chaining ?.
+- Nullish coalescing ??
+- Import and export
+
+Array and object manipulation
+
+Practise updating objects and arrays without directly modifying the original values.
+
+. Promises and asynchronous JavaScript
+
+Learn:
+- Synchronous vs asynchronous
+- Callbacks
+- Promises
+- .then() and .catch()
+- async and await
+- try and catch
+
+Fetch API and JSON
+
+Learn:
+- HTTP requests
+- GET and POST
+- JSON.stringify()
+- JSON.parse()
+- Handling API responses and errors
+10. Scope and closures
+
+Learn:
+- Global scope
+- Function scope
+- Block scope
+- Lexical scope
+- Closures
