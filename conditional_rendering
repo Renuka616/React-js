@@ -1,0 +1,50 @@
+conditional rendering:
+conditional rendering means based on condition what react should display
+
+if /else
+ternary operator
+&&
+
+Using if...else
+function userProffile({user})=>{
+    if (!user){
+        return <h1> please login </h1>
+    }
+    
+    return <h1> welcome{user.name} </h2>
+
+}
+
+//ternary
+
+function app(){
+    const isloggedin = True;
+
+
+return(
+    <div>
+    {isloggedin = True ?(<h1>welcome</h1>):(<h1>please login</h1>)}
+    </div>
+) 
+}
+
+The syntax is:
+
+condition ? trueValue : falseValue
+
+For example:
+
+isLoggedIn ? <Dashboard /> : <Login />
+
+// &&
+Using &&
+
+If you only want to show something when a condition is true:
+func app(){
+    const isadmin = True;
+    return(
+       <div>
+       {isadmin && <button>Delete User</button>}
+       </div>
+    )
+}

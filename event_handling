@@ -1,0 +1,49 @@
+Event Handling:
+Event handling in react is used to handle the user interactions such submit a 
+form,enter a userinput, clicking a button 
+the common event handlers are onClick, onSubmit, onChange 
+
+onChange: when user enter input such as username, password
+          the onChange event will capture the user input 
+
+onSubmit: onsubmit is used to handle the submit a form data such as save,
+           for example when submitting a login or registration form.  
+
+onClick: onClick is used to handle the click an element as button. 
+         for example if i have a view detail button to see the vendor details 
+         user clicks on view button it will fetch the user details .
+
+onChange → User changes data ✍️
+onClick → User clicks something 🖱️
+onSubmit → User submits a form 📤
+
+
+
+func app(){
+    const [username, setUserName] = useState("")
+    const [password, setPassword] = useState("")
+
+    const {handleSubmit} => ()
+    {
+        event.preventDefault();
+
+    console.log(username);
+    console.log(password);
+    }
+    return(
+        <form submit={handleSubmit}>
+        <input type = "text"
+               value = {username}
+               onChange{(e) => setUserName(e.target.value)}
+               placeholder = "password"
+        />
+        <input type = "text"
+               value = {password}
+               onChange{(e) => setPassword(e.target.value)}
+               placeholder = "password"
+        />
+        <button type = "button"> submit </button>
+        </form>
+    )
+
+}

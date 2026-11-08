@@ -1,0 +1,184 @@
+what is form in react?
+A form in react is used to collect the input data such as
+username,password and vendor details.
+In react we have event handlers such as onclick will handle the user clicking actions, onSubmit is used to handle the submit the form and 
+onChange is used to capture the input data 
+usually we will store the form value in react state
+
+const [username, setUsername] = useState("");
+
+<input
+  value={username}
+  onChange={(e) => setUsername(e.target.value)}
+/>
+
+what is controlled components?
+the controlled components are input values these input values are controlled by react state.
+the values are comes from state, whenever the user changes the input ,
+we update the state using onChange.
+
+What is an uncontrolled component?
+An uncontrolled components is a react form inputs where react state does not control directly, Instead, the DOM manages the value, and we can access it using a ref.
+
+import { useRef } from "react";
+
+function Login() {
+  const usernameRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(usernameRef.current.value);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input ref={usernameRef} />
+
+      <button type="submit">
+        Login
+      </button>
+    </form>
+  );
+}
+
+Controlled vs uncontrolled
+Controlled	                        Uncontrolled
+React state manages value	  DOM manages value
+Uses useState	              Usually uses useRef
+value + onChange	              ref
+
+Why do we use event.preventDefault()?
+
+By default when an html form submitted,the browser may reload the page and
+and may lead default submission of form, in react we usually want to submit by ourself, so we use event.preventDefault() to stop the default browser behavior.
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  // Call API here
+};
+
+
+How do you handle multiple input fields?
+For multiple fields, i will use one state management object and use common
+onchange handler,i will use input name attribute which field is updated.
+Example:
+
+const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  phone: ""
+});
+
+const handleChange = (event) => {
+  const { name, value } = event.target;
+
+  setFormData({
+    ...formData,
+    [name]: value
+  });
+};
+
+Inputs:
+
+<input
+  name="name"
+  value={formData.name}
+  onChange={handleChange}
+/>
+
+<input
+  name="email"
+  value={formData.email}
+  onChange={handleChange}
+/>
+
+<input
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+/>
+
+The important part is:
+
+[name]: value
+
+If the user changes email:
+
+name = "email"
+value = "renuka@gmail.com"
+
+        ↓
+formData.email = "renuka@gmail.com"
+
+How do you validate a form?
+I validate a form submitting before to the backend, i can perform client side validation such as email field is required, password length,required fields
+through backend also i will validate the input fields , by front-end alone is not required.
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  if (!formData.name) {
+    console.log("Name is required");
+    return;
+  }
+
+  if (!formData.email) {
+    console.log("Email is required");
+    return;
+  }
+
+  // Call API
+};
+
+
+How do you handle checkbox and radio buttons?
+for checkbox i will use checked instead of value
+
+const [isActive, setIsActive] = useState(false);
+
+<input
+  type="checkbox"
+  checked={isActive}
+  onChange={(e) => setIsActive(e.target.checked)}
+/>
+
+e.target.checked gives:
+
+true  → checked
+false → unchecked
+
+Radio buttons are normally used when the user should select one option from a group.
+const [gender, setGender] = useState("");
+
+<input
+  type="radio"
+  name="gender"
+  value="male"
+  checked={gender === "male"}
+  onChange={(e) => setGender(e.target.value)}
+/>
+
+<input
+  type="radio"
+  name="gender"
+  value="female"
+  checked={gender === "female"}
+  onChange={(e) => setGender(e.target.value)}
+/>
+
+How do you handle dropdown/select fields?
+const [role, setRole] = useState("");
+
+<select
+  value={role}
+  onChange={(e) => setRole(e.target.value)}
+>
+  <option value="">Select Role</option>
+  <option value="vendor">Vendor</option>
+  <option value="employee">Employee</option>
+  <option value="admin">Admin</option>
+</select>
+
+For dropdowns, I use the select element and manage its selected value using state. The onChange event updates the state whenever the user selects another option.

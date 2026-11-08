@@ -1,0 +1,124 @@
+what is Dom?
+Dom is a tree like representation of html page that the browser creates when its loads a web page
+
+what is virtual Dom?
+<html>
+   <body>
+   <div>
+       <h1> Vms </h2>
+       <button>Login</button>
+    </div>
+    </body>
+</html>
+
+The browser represents it roughly like:
+Document
+   │
+   └── html
+        │
+        └── body
+             ├── h1
+             │    └── "Hello Renuka"
+             │
+             └── button
+                  └── "Login"
+
+Each HTML element becomes an object/node in the DOM.
+
+virtual dom is a javascript representation of actual dom.when the state/props changes of a react component. the react creates a virtual dom and compare it with old virtual dom . it identifies what has changed and update require part of the dom. instead of update the entire part of the page
+
+Suppose your page has:
+
+Name: Renuka
+Age: 25
+City: Bangalore
+
+If only the age changes:
+
+Age: 25 → 26
+
+React determines that the Age part changed and updates the necessary DOM rather than rebuilding the entire UI.
+
+What is reconciliation?
+Reconciliation is the process React uses to compare the previous Virtual DOM with the new Virtual DOM and determine what changes need to be applied to the actual DOM.
+
+What is diffing in React?
+Diffing is the process of comparing the previous Virtual DOM with the new Virtual DOM to identify the differences.
+
+Diffing → find differences
+Reconciliation → determine and apply required UI updates
+
+Does React update the entire DOM?
+No a state change can cause a rerender the component, but doesnot mean that react entire browser dom recreate, react determine and update necessary dom changes
+
+Re-render ≠ entire DOM replacement
+
+Why are keys important?
+keys are important when rerendering the list
+{vendors.map(vendor)=>
+ <div key = {vendor.id}>
+    {vendor.name}   
+ </div>  
+}
+Suppose:
+
+101 → Vendor A
+102 → Vendor B
+103 → Vendor C
+
+React can use the IDs to identify the individual list items.
+
+keys are used for stable identify elements in a list. react uses keys during reconcilation to identify,which item have update, been removed or changed.
+
+
+What happens if we don't provide a key?
+If we don't provide a key
+ex
+{vendors.map(vendors)=>
+<div>
+{vendor.name}
+</div>
+}
+react warn
+Each child in a list should have a proper key
+
+when render a list with out key,react warn out each child in a list should contain a key, react cannot reliably identify a list items,
+it may leads the incorrect or insufficient behaviour of the ui in some cases.
+
+Why should we avoid using array index as a key in some situations?
+{vendors.map((vendor, index) => (
+    <div key={index}>
+        {vendor.name}
+    </div>
+))}
+
+It can work if the list is static and never changes order.
+
+But imagine:
+
+Before:
+
+Index 0 → Vendor A
+Index 1 → Vendor B
+Index 2 → Vendor C
+
+Now Vendor A is removed:
+
+After:
+
+Index 0 → Vendor B
+Index 1 → Vendor C
+
+The indexes changed.
+
+Before              After
+
+0 → A               0 → B
+1 → B               1 → C
+2 → C
+
+We should avoid using the array index as a key when the list can be reordered, inserted into, or deleted from. The index can change when the list changes, so it doesn't provide a stable identity. If possible, we should use a unique and stable ID from the data
+
+
+map() = render the list
+key = identify each item

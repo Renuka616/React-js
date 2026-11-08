@@ -1,0 +1,55 @@
+what is useContext?
+useContext is a react hook used to acces the stored  data in react context
+
+const {user} = useContext(UserContext)
+
+useContext() → React Hook
+UserContext → Context object
+user → shared data
+
+Instead of passing user through many components using props, a component can directly access it from Context.
+
+2. What is Context API?
+Context API is a React feature used to share data between components without manually passing props through every level.
+
+Common examples:
+
+Logged-in user
+
+Why do we use Context?
+to avoid the prop drilling
+App
+ ↓ user
+Dashboard
+ ↓ user
+Layout
+ ↓ user
+Navbar
+Maybe only Navbar needs the user.
+
+Without Context, you have to keep passing:
+
+What is Provider?
+A Provider makes the Context data available to its child components.
+<UserContext.Provider value={{ user, loginUser, logoutUser }}>
+    {children}
+</UserContext.Provider>
+
+What is useContext?
+
+After creating the Context and Provider, we need a way to read the Context data.
+
+That's where useContext() comes in.
+
+const { user } = useContext(UserContext);
+
+This means:
+
+"Give me the value currently provided by UserContext."
+
+
+
+
+
+
+

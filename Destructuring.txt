@@ -1,0 +1,48 @@
+Destructuring : object destructuring is a javascript es6 feature 
+it allows us to extracting properties and store them in a separate 
+Variables
+
+instead of accessing each property using . notation,
+ we can extract multiple properties in a single statement
+
+ syntax: const [//destructuring varables] = object/array
+
+ vendordetails = {
+  "name" : "ANN Technologies",
+  "email" : "ann@gmail.com",
+  "address" : "bangalore"
+}
+const {name,email,address} = vendordetails
+console.log(name)
+console.log(email)
+
+ar1 = ["Renuka","INFOTECH"]
+const [naqme,company] = ar1
+console.log(naqme)
+console.log(company)
+
+n my project, I used object destructuring when working with 
+API responses and vendor information in React.
+ It makes the code cleaner, shorter, and easier to maintain."
+
+ ex : fecthing the vendor details
+ import axios from "axios";
+
+const getVendorDetails = async () => {
+    const response = await axios.get("/api/vendors/");
+
+    const { data } = response;
+
+    console.log(data);
+};
+
+here response contains the API response.
+
+
+
+data is extracted from the response object using destructuring.
+
+
+
+We can use data directly instead of writing response.data repeatedly.
+
